@@ -1,6 +1,7 @@
 {
   "projects": {
-    "vaicall": "vaicall"
+    "vaicall": "vaicall",
+    "vc": "vaicall"
   },
   "targets": {}
 }
