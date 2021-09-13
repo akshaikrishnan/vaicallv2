@@ -20,6 +20,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { ProfileComponent } from './chat/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     HomeComponent,
     MessageboardComponent,
     RoomID,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
