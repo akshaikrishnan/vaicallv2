@@ -1,0 +1,56 @@
+<div class="dialoge-content" mat-dialog-content>
+  <div class="section profile">
+    <h3 mat-dialog-title>Please Enter your Name</h3>
+    <img
+      src="../../../assets/images/undraw_male_avatar_323b.svg"
+      width="40%"
+      alt=""
+    />
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Ex. Pizza" [value]="name" readonly />
+      <button matSuffix mat-icon-button aria-label="Copy">
+        <mat-icon>content_copy</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+
+  <div class="id-content section">
+    <h2 mat-dialog-title>Share Your Meeting ID</h2>
+    <mat-tab-group>
+      <mat-tab label="Meet ID">
+        <mat-form-field class="input-id" appearance="fill">
+          <mat-label>Meeting ID</mat-label>
+          <input matInput placeholder="Ex. Pizza" [value]="roomid" readonly />
+          <button
+            matSuffix
+            mat-icon-button
+            aria-label="Copy"
+            [cdkCopyToClipboard]="roomid"
+            (click)="openSnackBar('Room ID')"
+          >
+            <mat-icon>content_copy</mat-icon>
+          </button>
+        </mat-form-field>
+      </mat-tab>
+      <mat-tab label="Meet URL">
+        <mat-form-field class="input-id" appearance="fill">
+          <mat-label>Meeting URL</mat-label>
+          <input matInput placeholder="Ex. Pizza" [value]="roomurl" readonly />
+          <button
+            matSuffix
+            mat-icon-button
+            aria-label="Copy"
+            [cdkCopyToClipboard]="roomurl"
+            (click)="openSnackBar('Room URL')"
+          >
+            <mat-icon>content_copy</mat-icon>
+          </button>
+        </mat-form-field>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>
+<!-- <div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</div> -->

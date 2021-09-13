@@ -1,0 +1,60 @@
+<div class="main-container">
+  <mat-drawer-container hasBackdrop="false">
+    <mat-drawer #drawer class="drawer-container" mode="push" position="end"
+      >I'm a drawer</mat-drawer
+    >
+    <mat-drawer-content>
+      <div class="video-container" *ngIf="connecting">
+        <video #local_video [autoplay]="true" [muted]="true"></video>
+      </div>
+      <div class="group-container">
+        <!-- <mat-grid-list *ngIf="!connecting" [cols]="globalCols" [rowHeight]="rowheight">
+          <mat-grid-tile
+            *ngFor="let tile of tiles"
+            [colspan]="tile.cols"
+            [rowspan]="tile.rows"
+            [style.background]="tile.color"
+          >
+            {{ tile.text }}
+          </mat-grid-tile>
+        </mat-grid-list> -->
+        <div class="video" *ngFor="let tile of tiles">hello</div>
+      </div>
+
+      <div class="buttons-container">
+        <button
+          mat-icon-button
+          aria-label="Example icon button with a vertical three dot icon"
+          (click)="addpp()"
+        >
+          <mat-icon>add</mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          aria-label="Example icon button with a vertical three dot icon"
+        >
+          <mat-icon>mic_off</mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          aria-label="Example icon button with a vertical three dot icon"
+        >
+          <mat-icon>videocam</mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          aria-label="Example icon button with a vertical three dot icon"
+        >
+          <mat-icon>call_end</mat-icon>
+        </button>
+        <button
+          (click)="drawer.toggle()"
+          mat-icon-button
+          aria-label="Example icon button with a vertical three dot icon"
+        >
+          <mat-icon>message</mat-icon>
+        </button>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>
