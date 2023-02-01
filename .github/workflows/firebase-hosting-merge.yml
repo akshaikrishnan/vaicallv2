@@ -6,14 +6,18 @@ name: Deploy to Firebase Hosting on merge
   push:
     branches:
       - master
-env:
-  TEST: '${{ secrets.TEST }}'
-  
+
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '12'
+      - run: node server.js
+        env:
+          TEST: `${{secrets.TEST}}`
       - run: npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
