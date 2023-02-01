@@ -17,7 +17,7 @@ jobs:
           node-version: '12'
       - run: node server.js
         env:
-          TEST: `${{ secrets.TEST }}`
+          TEST: '${{ secrets.TEST }}'
       - run: npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
