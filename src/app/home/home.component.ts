@@ -1,4 +1,5 @@
 import { Component, NgZone, OnInit } from '@angular/core';
+import { environment } from '../../environments/environment.prod';
 
 @Component({
   selector: 'app-home',
@@ -6,6 +7,7 @@ import { Component, NgZone, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  variable:any;
   constructor(private ngZone: NgZone) {
     window.onresize = (e) => {
       //ngZone.run will help to run change detection
@@ -16,5 +18,7 @@ export class HomeComponent implements OnInit {
     };
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.variable=environment.TEST;
+  }
 }
